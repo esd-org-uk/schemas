@@ -1,0 +1,336 @@
+{
+	"fields": [
+        {
+			"name": "ExtractDate",
+			"title": "Extract Date",
+			"description": "The date that the data was last extracted from its source database",
+			"constraints": {
+				"required": "true",
+				"type": "http://www.w3.org/2001/XMLSchema#string",
+                "pattern" : "(^([0-2]\\d|[3][0-1])\\/([0]\\d|[1][0-2])\\/[1-2]\\d{3}((\\s([0-1]\\d|[2][0-3]):[0-5]\\d(:[0-5]\\d)?)?)|)$"
+			}
+		},
+		{
+			"name": "PublisherURI",
+			"title": "Publisher URI",
+			"description": "URI from ODC of publishing organisation",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#anyURI"
+			}
+		},
+		{
+			"name": "PublisherLabel",
+			"title": "Publisher Label",
+			"description": "Label of publishing organisation",
+			"constraints": {
+				"required": "true",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "OrganisationURI",
+			"title": "Organisation URI",
+			"description": "URI from ODC of planning authority",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#anyURI"
+			}
+		},
+		{
+			"name": "OrganisationLabel",
+			"title": "Organisation Label",
+			"description": "Label of planning authority. If empty uses this will be the same as the publishing organisation",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "CaseReference",
+			"title": "Case Reference",
+			"description": "Reference given to an application on submission. Unique within the planning authority",
+			"constraints": {
+				"required": "true",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "CaseURL",
+			"title": "Case URL",
+			"description": "URL to Web Page giving information about the application. Should be present because of council duty to publish",
+			"constraints": {
+				"required": "true",
+				"type": "http://www.w3.org/2001/XMLSchema#anyURI"
+			}
+		},
+		{
+			"name": "CaseDate",
+			"title": "Case Date",
+			"description": "Date on which a valid application was received (even if the validity check was later).  This is the date from which the target decision date is set.",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string",
+                "pattern" : "(^([0-2]\\d|[3][0-1])\\/([0]\\d|[1][0-2])\\/[1-2]\\d{3}((\\s([0-1]\\d|[2][0-3]):[0-5]\\d(:[0-5]\\d)?)?)|)$"
+			}
+		},
+		{
+			"name": "ServiceTypeURI",
+			"title": "Service Type URI",
+			"description": "Service URI from http://id.esd.org.uk/list/services",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#anyURI"
+			}
+		},
+		{
+			"name": "ServiceTypeLabel",
+			"title": "Service Type Label",
+			"description": "Label of the Service Type URI",
+			"constraints": {
+				"required": "true",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "ClassificationURI",
+			"title": "Classification URI",
+			"description": "‘Q’ and ‘R’ codes are associated with applications so that data can be ‘returned’ to DCLG. Examples include: Q3 General Industry / storage / warehousing Q4 Retail distribution and servicing Q5 Gypsy and Traveller pitches which also group into ‘Major Developments’ and ‘Minor Developments’. It is possible that this information is NOT recorded with the application. The Department for Communities and Local Government will publish a list of ‘Categories’ as a SKOS list.",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "ClassificationLabel",
+			"title": "Classification Label",
+			"description": "Label of the Classification URI",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "CaseText",
+			"title": "Case Text",
+			"description": "Text from the applicant on the proposal",
+			"constraints": {
+				"required": "true",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "LocationText",
+			"title": "Location Text",
+			"description": "The location of the application as described by the applicant. Will have new lines",
+			"constraints": {
+				"required": "true",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "DecisionTargetDate",
+			"title": "Decision Target Date",
+			"description": "The date the application should be determined by. Optional because not relevant once an application is complete",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string",
+                "pattern" : "(^([0-2]\\d|[3][0-1])\\/([0]\\d|[1][0-2])\\/[1-2]\\d{3}((\\s([0-1]\\d|[2][0-3]):[0-5]\\d(:[0-5]\\d)?)?)|)$"
+			}
+		},
+		{
+			"name": "Status",
+			"title": "Status",
+			"description": "The status at the extracted date",
+			"constraints": {
+				"required": "false",
+				"pattern": "(Pending|Withdrawn|Decided|Appealed|)"
+			}
+		},
+		{
+			"name": "CoordinateReferenceSystem",
+			"title": "Co-ordinate Reference System",
+			"description": "‘WGS84’ (http://en.wikipedia.org/wiki/WGS84) or ‘OSGB36’ (http://en.wikipedia.org/wiki/Ordnance_Survey_National_Grid). WGS84 is the default.",
+			"constraints": {
+				"required": "false",
+				"pattern": "(WGS84|OSGB36|)"
+			}
+		},
+		{
+			"name": "GeoX",
+			"title": "Geo X",
+			"description": "Longitude or east grid reference for centroid of application boundary",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#float"
+			}
+		},
+		{
+			"name": "GeoY",
+			"title": "Geo Y",
+			"description": "Latitude or north grid reference for centroid of application boundary",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#float"
+			}
+		},
+		{
+			"name": "GeoPointLicensingURL",
+			"title": "Geo Point Licensing URL",
+			"description": "URL of any page that describes any licensing restrictions on using the northing and easting.",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#anyURI"
+			}
+		},
+		{
+			"name": "DecisionDate",
+			"title": "Decision Date",
+			"description": "The date on which the decision was made by the authority on the application. Different from target decision date!",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string",
+                "pattern" : "(^([0-2]\\d|[3][0-1])\\/([0]\\d|[1][0-2])\\/[1-2]\\d{3}((\\s([0-1]\\d|[2][0-3]):[0-5]\\d(:[0-5]\\d)?)?)|)$"
+			}
+		},
+		{
+			"name": "Decision",
+			"title": "Decision",
+			"description": "The decision of the planning authority on the application",
+			"constraints": {
+				"required": "false",
+				"pattern": "(Granted|Refused|)"
+			}
+		},
+        {
+			"name": "DecisionType",
+			"title": "Decision Type",
+			"description": "To indicate how the decision will be (or was) made",
+			"constraints": {
+				"required": "false",
+				"pattern": "(Delegated powers|Case officer|Planning committee|)"
+			}
+		},
+        {
+			"name": "DecisionNoticeDate",
+			"title": "Decision Notice Date",
+			"description": "Decision Notice Date",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string",
+                "pattern" : "(^([0-2]\\d|[3][0-1])\\/([0]\\d|[1][0-2])\\/[1-2]\\d{3}((\\s([0-1]\\d|[2][0-3]):[0-5]\\d(:[0-5]\\d)?)?)|)$"
+			}
+		},
+        {
+			"name": "AppealRef",
+			"title": "Appeal Reference",
+			"description": "Planning inspectorate reference.  Should be unique nationally. This probably comes from another body and so may not be known",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "AppealDecisionDate",
+			"title": "Appeal Decision Date",
+			"description": "The date of the decision from the appeal process. Should only be present if the status indicates an appeal.",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string",
+                "pattern" : "(^([0-2]\\d|[3][0-1])\\/([0]\\d|[1][0-2])\\/[1-2]\\d{3}((\\s([0-1]\\d|[2][0-3]):[0-5]\\d(:[0-5]\\d)?)?)|)$"
+			}
+		},
+		{
+			"name": "AppealDecision",
+			"title": "Appeal Decision",
+			"description": "The decision of an appeal. Should only be present if the status indicates an appeal. MUST NOT overwrite council's original decision.",
+			"constraints": {
+				"required": "false",
+				"pattern": "(Dismissed|Enforcement notice modified|Upheld|Withdrawn|)"
+			}
+		},
+		{
+			"name": "GeoAreaURI",
+			"title": "Geo Area URI",
+			"description": "A predefined spatial area that the application is contained in.  Note that these can be derived from X/Y co-ordinates. Comma delimit in spreadsheet where there is more than one",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "GeoAreaLabel",
+			"title": "Geo Area Label",
+			"description": "Labels of the Geo Area URI. Comma delimit in spreadsheet where there is more than one",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "GroundArea",
+			"title": "Ground Area",
+			"description": "The ground area of the boundary in square meters",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#float"
+			}
+		},
+		{
+			"name": "UPRN",
+			"title": "UPRN",
+			"description": "Unique Property Reference Number. Reference to the land or property which is the subject of the application",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+        {
+		    "name": "Agent",
+			"title": "Agent",
+			"description": "Agent",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "PublicConsultationStartDate",
+			"title": "Public Consultation Start Date",
+			"description": "The date from which the public can make representations about the application",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string",
+                "pattern" : "(^([0-2]\\d|[3][0-1])\\/([0]\\d|[1][0-2])\\/[1-2]\\d{3}((\\s([0-1]\\d|[2][0-3]):[0-5]\\d(:[0-5]\\d)?)?)|)$"
+			}
+		},
+		{
+			"name": "PublicConsultationEndDate",
+			"title": "Public Consultation End Date",
+			"description": "The date up to which the public can make representations about the application",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string",
+                "pattern" : "(^([0-2]\\d|[3][0-1])\\/([0]\\d|[1][0-2])\\/[1-2]\\d{3}((\\s([0-1]\\d|[2][0-3]):[0-5]\\d(:[0-5]\\d)?)?)|)$"
+			}
+		},
+		{
+			"name": "ResponsesFor",
+			"title": "Responses For",
+			"description": "The number of representations received during the public consultation period which were supportive",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+			}
+		},
+		{
+			"name": "ResponsesAgainst",
+			"title": "Responses Against",
+			"description": "The number of representations received during the public consultation period which were unsupportive",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+			}
+		}
+	]
+}

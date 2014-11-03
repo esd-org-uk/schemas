@@ -1,0 +1,57 @@
+ExtractDate,OrganisationURI,OrganisationLabel,ServiceTypeURI,ServiceTypeLabel,LocationText,CoordinateReferenceSystem,GeoX,GeoY,GeoPointLicensingURL,Category,AccessibleCategory,RADARKeyNeeded,BabyChange,FamilyToilet,ChangingPlace,AutomaticPublicConvenience,FullTimeStaffing,PartOfCommunityScheme,CommunitySchemeName,ChargeAmount,InfoURL,OpeningHours,ManagedBy,ReportEmail,ReportTel,Notes,UPRN,Postcode,StreetAddress,GeoAreaURI,GeoAreaLabel
+24/06/2014,http://opendatacommunities.org/id/london-borough-council/kensington-and-chelsea,Kensington and Chelsea,http://id.esd.org.uk/service/579,Public toilets,"Bevington Road
+At junction of Golborne Road
+W10",,,,,Female and Male,Female and Male,false,false,,,false,true,,,0.00,http://www.rbkc.gov.uk/environmentandtransport/environmentalhealth/publictoilets.aspx,"9am - 6pm Monday - Thursday
+8am - 6pm Friday - Saturday",Streetline,streetline@rbkc.gov.uk,020 7361 3001,,,,,,
+24/06/2014,http://opendatacommunities.org/id/london-borough-council/kensington-and-chelsea,Kensington and Chelsea,http://id.esd.org.uk/service/579,Public toilets,"Kensington Town Hall
+By Town Hall Car Park exit
+Hornton Street",,,,,Female and Male,Female and Male,false,false,,,false,true,,,0.00,http://www.rbkc.gov.uk/environmentandtransport/environmentalhealth/publictoilets.aspx,"9am - 8pm Monday - Saturday
+10am - 5pm Sunday",Streetline,streetline@rbkc.gov.uk,020 7361 3001,Wheelchair accessible,,,,,
+24/06/2014,http://opendatacommunities.org/id/london-borough-council/kensington-and-chelsea,Kensington and Chelsea,http://id.esd.org.uk/service/579,Public toilets,"Talbot Road,
+W10",,,,,Female and Male,Female and Male,false,true,,,false,true,,,0.00,http://www.rbkc.gov.uk/environmentandtransport/environmentalhealth/publictoilets.aspx,8am - 6pm Friday - Saturday,Streetline,streetline@rbkc.gov.uk,020 7361 3001,,,,,,
+24/06/2014,http://opendatacommunities.org/id/london-borough-council/kensington-and-chelsea,Kensington and Chelsea,http://id.esd.org.uk/service/579,Public toilets,"Westbourne Grove
+Near junction with Colville Road
+W11",,,,,Female and Male,Female and Male,false,true,,,false,true,,,0.00,http://www.rbkc.gov.uk/environmentandtransport/environmentalhealth/publictoilets.aspx,"9am - 8pm Monday - Friday
+7am - 8pm Saturday",Streetline,streetline@rbkc.gov.uk,020 7361 3001,Wheelchair accessible,,,,,
+24/06/2014,http://opendatacommunities.org/id/london-borough-council/kensington-and-chelsea,Kensington and Chelsea,http://id.esd.org.uk/service/579,Public toilets,"Earls Court
+By ticket hall inside station
+Earls Court Road entrance
+W8",,,,,Unisex,Unisex,false,false,,,true,false,,,0.00,http://www.rbkc.gov.uk/environmentandtransport/environmentalhealth/publictoilets.aspx,According to station opening hours,Streetline,streetline@rbkc.gov.uk,020 7361 3001,Separate wheelchair accessible facility adjacent (RADAR key accessible),,,,,
+24/06/2014,http://opendatacommunities.org/id/london-borough-council/kensington-and-chelsea,Kensington and Chelsea,http://id.esd.org.uk/service/579,Public toilets,"Courtfield Road
+SW7",,,,,Unisex,Unisex,true,false,,,true,false,,,0.00,http://www.rbkc.gov.uk/environmentandtransport/environmentalhealth/publictoilets.aspx,24 hours,Streetline,streetline@rbkc.gov.uk,020 7361 3001,Wheelchair accessible,,,,,
+24/06/2014,http://opendatacommunities.org/id/london-borough-council/kensington-and-chelsea,Kensington and Chelsea,http://id.esd.org.uk/service/579,Public toilets,"Gloucester Road
+Autoloo
+outside the underground station
+Gloucester Road
+SW 7",,,,,Unisex,Unisex,false,false,,,true,false,,,0.20,http://www.rbkc.gov.uk/environmentandtransport/environmentalhealth/publictoilets.aspx,24 hours,Streetline,streetline@rbkc.gov.uk,020 7361 3001,,,,,,
+24/06/2014,http://opendatacommunities.org/id/london-borough-council/kensington-and-chelsea,Kensington and Chelsea,http://id.esd.org.uk/service/579,Public toilets,"Kensington Church Street
+Bus Shelter Autoloo
+Bus Shelter
+By Lancer Square
+W8",,,,,Unisex,Unisex,false,false,,,true,false,,,0.20,http://www.rbkc.gov.uk/environmentandtransport/environmentalhealth/publictoilets.aspx,24 hours,Streetline,streetline@rbkc.gov.uk,020 7361 3001,Wheelchair accessible (RADAR key accessible),,,,,
+24/06/2014,http://opendatacommunities.org/id/london-borough-council/kensington-and-chelsea,Kensington and Chelsea,http://id.esd.org.uk/service/579,Public toilets,"Kensington High Street
+outside the Odeon Cinema
+W8",,,,,Unisex,Unisex,false,false,,,true,false,,,0.20,http://www.rbkc.gov.uk/environmentandtransport/environmentalhealth/publictoilets.aspx,24 hours,Streetline,streetline@rbkc.gov.uk,020 7361 3001,Wheelchair accessible (RADAR key accessible),,,,,
+24/06/2014,http://opendatacommunities.org/id/london-borough-council/kensington-and-chelsea,Kensington and Chelsea,http://id.esd.org.uk/service/579,Public toilets,"Lonsdale Road / Portobello Road
+W11",,,,,Unisex,Unisex,false,false,,,true,false,,,0.00,http://www.rbkc.gov.uk/environmentandtransport/environmentalhealth/publictoilets.aspx,24 hours,Streetline,streetline@rbkc.gov.uk,020 7361 3001,Wheelchair accessible (RADAR key accessible),,,,,
+24/06/2014,http://opendatacommunities.org/id/london-borough-council/kensington-and-chelsea,Kensington and Chelsea,http://id.esd.org.uk/service/579,Public toilets,"Notting Hill Gate
+Bus Shelter Autoloo
+Opposite the Coronet Cinema
+W11",,,,,Unisex,Unisex,false,false,,,true,false,,,0.20,http://www.rbkc.gov.uk/environmentandtransport/environmentalhealth/publictoilets.aspx,24 hours,Streetline,streetline@rbkc.gov.uk,020 7361 3001,Wheelchair accessible (RADAR key accessible),,,,,
+24/06/2014,http://opendatacommunities.org/id/london-borough-council/kensington-and-chelsea,Kensington and Chelsea,http://id.esd.org.uk/service/579,Public toilets,"Portobello Road
+Autoloo
+At junction with Portobell Road and
+Lonsdale Road W10",,,,,Unisex,Unisex,false,true,,,true,false,,,0.20,http://www.rbkc.gov.uk/environmentandtransport/environmentalhealth/publictoilets.aspx,24 hours,Streetline,streetline@rbkc.gov.uk,020 7361 3001,Wheelchair accessible (RADAR key accessible),,,,,
+24/06/2014,http://opendatacommunities.org/id/london-borough-council/kensington-and-chelsea,Kensington and Chelsea,http://id.esd.org.uk/service/579,Public toilets,"Sloane Square
+Autoloo
+Outside W H Smiths
+Junction with Sloane Gardens
+SW1",,,,,Unisex,Unisex,false,false,,,true,false,,,0.20,http://www.rbkc.gov.uk/environmentandtransport/environmentalhealth/publictoilets.aspx,24 hours,Streetline,streetline@rbkc.gov.uk,020 7361 3001,,,,,,
+24/06/2014,http://opendatacommunities.org/id/london-borough-council/kensington-and-chelsea,Kensington and Chelsea,http://id.esd.org.uk/service/579,Public toilets,"Avondale Park, W11",,,,,Female and Male,Female and Male,false,false,,,false,false,,,0.00,http://www.rbkc.gov.uk/environmentandtransport/environmentalhealth/publictoilets.aspx,7.30am - dusk,Streetline,streetline@rbkc.gov.uk,020 7361 3001,Wheelchair accessible,,,,,
+24/06/2014,http://opendatacommunities.org/id/london-borough-council/kensington-and-chelsea,Kensington and Chelsea,http://id.esd.org.uk/service/579,Public toilets,"Cremorne Gardens, SW10 ",,,,,Female and Male,Female and Male,false,false,,,false,false,,,0.00,http://www.rbkc.gov.uk/environmentandtransport/environmentalhealth/publictoilets.aspx,7.30am - dusk,Streetline,streetline@rbkc.gov.uk,020 7361 3001,,,,,,
+24/06/2014,http://opendatacommunities.org/id/london-borough-council/kensington-and-chelsea,Kensington and Chelsea,http://id.esd.org.uk/service/579,Public toilets,"Emslie Horniman Pleasance, W10",,,,,Female and Male,Female and Male,false,true,,,false,false,,,0.00,http://www.rbkc.gov.uk/environmentandtransport/environmentalhealth/publictoilets.aspx,7.30am - 30 minutes before dusk,Streetline,streetline@rbkc.gov.uk,020 7361 3001,Wheelchair accessible (RADAR key accessible),,,,,
+24/06/2014,http://opendatacommunities.org/id/london-borough-council/kensington-and-chelsea,Kensington and Chelsea,http://id.esd.org.uk/service/579,Public toilets,"Holland Park, W8",,,,,Female and Male,Female and Male,false,true,,,false,false,,,0.00,http://www.rbkc.gov.uk/environmentandtransport/environmentalhealth/publictoilets.aspx,8am - dusk,Streetline,streetline@rbkc.gov.uk,020 7361 3001,Wheelchair accessible (RADAR key accessible),,,,,
+24/06/2014,http://opendatacommunities.org/id/london-borough-council/kensington-and-chelsea,Kensington and Chelsea,http://id.esd.org.uk/service/579,Public toilets,"Kensington Memorial Park, W11",,,,,Female and Male,Female and Male,false,true,,,false,false,,,0.00,http://www.rbkc.gov.uk/environmentandtransport/environmentalhealth/publictoilets.aspx,7.30am - dusk,Streetline,streetline@rbkc.gov.uk,020 7361 3001,Wheelchair accessible (RADAR key accessible),,,,,
+24/06/2014,http://opendatacommunities.org/id/london-borough-council/kensington-and-chelsea,Kensington and Chelsea,http://id.esd.org.uk/service/579,Public toilets,"Little Wormwood Scrubs, W10",,,,,Female and Male,Female and Male,false,false,,,false,false,,,0.00,http://www.rbkc.gov.uk/environmentandtransport/environmentalhealth/publictoilets.aspx,7.30am - dusk,Streetline,streetline@rbkc.gov.uk,020 7361 3001,Wheelchair accessible (RADAR key accessible),,,,,
+24/06/2014,http://opendatacommunities.org/id/london-borough-council/kensington-and-chelsea,Kensington and Chelsea,http://id.esd.org.uk/service/579,Public toilets,"St Luke's Gardens, SW3",,,,,Female and Male,Female and Male,false,true,,,false,false,,,0.00,http://www.rbkc.gov.uk/environmentandtransport/environmentalhealth/publictoilets.aspx,7.30am - dusk,Streetline,streetline@rbkc.gov.uk,020 7361 3001,Wheelchair accessible (RADAR key accessible),,,,,
+24/06/2014,http://opendatacommunities.org/id/london-borough-council/kensington-and-chelsea,Kensington and Chelsea,http://id.esd.org.uk/service/579,Public toilets,"Westfield Park, SW10",,,,,Female and Male,Female and Male,false,false,,,false,false,,,0.00,http://www.rbkc.gov.uk/environmentandtransport/environmentalhealth/publictoilets.aspx,7.30am - dusk,Streetline,streetline@rbkc.gov.uk,020 7361 3001,Wheelchair accessible,,,,,

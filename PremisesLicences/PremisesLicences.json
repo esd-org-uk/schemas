@@ -1,0 +1,333 @@
+{
+	"fields": [
+		{
+			"name": "ExtractDate",
+			"title": "Extract Date",
+			"description": "The date that the data was last extracted from its source database",
+			"constraints": {
+				"required": "true",
+				"type": "http://www.w3.org/2001/XMLSchema#string",
+                "pattern" : "(^([0-2]\\d|[3][0-1])\\/([0]\\d|[1][0-2])\\/[1-2]\\d{3}((\\s([0-1]\\d|[2][0-3]):[0-5]\\d(:[0-5]\\d)?)?)|)$"
+			}
+		},
+		{
+			"name": "OrganisationURI",
+			"title": "Organisation URI",
+			"description": "URI from OpenDataCommunities of organisation (eg local authority) responsible for the case",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#anyURI"
+			}
+		},
+		{
+			"name": "OrganisationLabel",
+			"title": "Organisation Label",
+			"description": "Label of Organisation URI",
+			"constraints": {
+				"required": "true",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "CaseReference",
+			"title": "Case Reference",
+			"description": "Licence number - Number allocated to licence when issued. Null before issued. Same licence might apply to multiple entries to give a history",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "CaseDate",
+			"title": "Case Date",
+			"description": "Licence issue date.  Null before issued",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string",
+                "pattern" : "(^([0-2]\\d|[3][0-1])\\/([0]\\d|[1][0-2])\\/[1-2]\\d{3}((\\s([0-1]\\d|[2][0-3]):[0-5]\\d(:[0-5]\\d)?)?)|)$"
+			}
+		},
+		{
+			"name": "ServiceTypeURI",
+			"title": "Service Type URI",
+			"description": "Premises related licence type. One of premises licence, club premises certificate, temporary event notice. One LGSL service type for each of these as given by the Service URI from http://id.esd.org.uk/list/services",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#anyURI"
+			}
+		},
+		{
+			"name": "ServiceTypeLabel",
+			"title": "Service Type Label",
+			"description": "Label of the Service Type URI",
+			"constraints": {
+				"required": "true",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "PremisesName",
+			"title": "Premises Name",
+			"description": "Name of licenced premises",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "LocationText",
+			"title": "Location Text",
+			"description": "Address of licenced premises",
+			"constraints": {
+				"required": "true",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "Postcode",
+			"title": "Postcode",
+			"description": "Only empty if premises have no post code (eg field for an event)",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "EntertainmentTypeURI",
+			"title": "Entertainment Type URI",
+			"description": "List of 8 types of entertainment activity defined on application form: plays, films, indoor sporting events, boxing or wrestling entertainment, live music, recorded music, performances of dance, anything of a similar description to that falling within the previous three",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "EntertainmentTypeLabel",
+			"title": "Entertainment Type Label",
+			"description": "Label of the Entertainment Type URI",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "LateNightRefreshment",
+			"title": "Late Night Refreshment",
+			"description": "Flag to indicate whether the licence allows late night refreshment",
+			"constraints": {
+				"required": "true",
+				"pattern": "(true|True|TRUE|false|False|FALSE|yes|Yes|YES|no|No|NO)"
+			}
+		},
+		{
+			"name": "AlcoholSupply",
+			"title": "Alcohol Supply",
+			"description": "Flag to indicate whether the licence allows alcohol to be supplied",
+			"constraints": {
+				"required": "true",
+				"pattern": "(true|True|TRUE|false|False|FALSE|yes|Yes|YES|no|No|NO)"
+			}
+		},
+		{
+			"name": "OpeningHours",
+			"title": "Opening Hours",
+			"description": "Opening hours (eg two opening periods per day) by day of week, opening time & closing time for each entertainment type + late night refreshment + supply of alcohol",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "StatusURI",
+			"title": "Status URI",
+			"description": "Status of application/licence (eg new, current, expired, refused etc.)",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#anyURI"
+			}
+		},
+		{
+			"name": "StatusLabel",
+			"title": "Status Label",
+			"description": "Label of the StatusURI",
+			"constraints": {
+				"required": "true",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "LicenceStartDate",
+			"title": "Licence Start Date",
+			"description": "Date on which the licence starts",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string",
+                "pattern" : "(^([0-2]\\d|[3][0-1])\\/([0]\\d|[1][0-2])\\/[1-2]\\d{3}((\\s([0-1]\\d|[2][0-3]):[0-5]\\d(:[0-5]\\d)?)?)|)$"
+			}
+		},
+		{
+			"name": "LicenceEndDate",
+			"title": "Licence End Date",
+			"description": "Date on which the licence ends. For temporary event notice or where requested on other types.",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string",
+                "pattern" : "(^([0-2]\\d|[3][0-1])\\/([0]\\d|[1][0-2])\\/[1-2]\\d{3}((\\s([0-1]\\d|[2][0-3]):[0-5]\\d(:[0-5]\\d)?)?)|)$"
+			}
+		},
+		{
+			"name": "OnPremisesAlcoholSale",
+			"title": "On Premises Alcohol Sale",
+			"description": "Flag to indicate whether the licence allows alcohol to be sold on the premises",
+			"constraints": {
+				"required": "false",
+				"pattern": "(true|True|TRUE|false|False|FALSE|yes|Yes|YES|no|No|NO|)"
+			}
+		},
+		{
+			"name": "OffPremisesAlcoholSale",
+			"title": "Off Premises Alcohol Sale",
+			"description": "Flag to indicate whether the licence allows alcohol to be sold off the premises",
+			"constraints": {
+				"required": "false",
+				"pattern": "(true|True|TRUE|false|False|FALSE|yes|Yes|YES|no|No|NO|)"
+			}
+		},
+		{
+			"name": "LicenceHolder",
+			"title": "Licence Holder",
+			"description": "Pipe separated list of names of individuals or businesses which hold the licence",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "LicenceHolderAddress",
+			"title": "Licence Holder Address",
+			"description": "Pipe separated list of addresses of individuals or businesses which hold licence. Blank unless address differs from premises address.",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "LicenceHolderPostcode",
+			"title": "Licence Holder Postcode",
+			"description": "Pipe separated list of postcodes of individuals or businesses which hold licence. Blank unless address differs from premises address.",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "ApplicantTypeURI",
+			"title": "Applicant Type URI",
+			"description": "Type of licence (individual, business, club etc. List defined on application form)",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#anyURI"
+			}
+		},
+		{
+			"name": "ApplicantTypeLabel",
+			"title": "Applicant Type Label",
+			"description": "Label of ApplicantTypeURI",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "DesignatedPremisesSupervisor",
+			"title": "Designated Premises Supervisor",
+			"description": "Name of designated premises supervisor (for alcohol licence)",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "SupervisorLicenceNo",
+			"title": "Supervisor Licence No",
+			"description": "Personal licence number of designated supervisor",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "SupervisorAddress",
+			"title": "Supervisor Address",
+			"description": "Address of designated premises supervisor",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "SupervisorPostcode",
+			"title": "Supervisor Postcode",
+			"description": "Postcode of designated premises supervisor",
+			"constraints": {
+				"required": "false",
+				"pattern": "(^([A-PR-UWYZ0-9][A-HK-Y0-9][AEHMNPRTVXY0-9]?[ABEHMNPRVWXY0-9]? {1,2}[0-9][ABD-HJLN-UW-Z]{2}|GIR 0AA)$|)"
+			}
+		},
+		{
+			"name": "Conditions",
+			"title": "Conditions",
+			"description": "Conditions attached to issuing of a licence",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "DecisionDate",
+			"title": "Decision Date",
+			"description": "Date licence granted/refused",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string",
+                "pattern" : "(^([0-2]\\d|[3][0-1])\\/([0]\\d|[1][0-2])\\/[1-2]\\d{3}((\\s([0-1]\\d|[2][0-3]):[0-5]\\d(:[0-5]\\d)?)?)|)$"
+			}
+		},
+		{
+			"name": "DecidedBy",
+			"title": "Decided By",
+			"description": "Name of officer making decision on application",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "LicenceURL",
+			"title": "Licence URL",
+			"description": "URL to further information, including opening hours and license type",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#anyURI"
+			}
+		},
+		{
+			"name": "UPRN",
+			"title": "UPRN",
+			"description": "Unique Property Reference Number",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		},
+		{
+			"name": "GeoPointLicensingURL",
+			"title": "Geo Point Licensing URL",
+			"description": "URL of any page that describes any licensing restrictions on using UPRN values",
+			"constraints": {
+				"required": "false",
+				"type": "http://www.w3.org/2001/XMLSchema#string"
+			}
+		}
+	]
+}

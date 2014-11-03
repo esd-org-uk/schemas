@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" version="0.3" targetNamespace="http://schemas.esd.org.uk/inventory" xmlns:enum="http://schemas.esd.org.uk/inventory" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!--
+    0.1   Initial version
+    0.2   Identifier and Publisher of Inventory made mandatory
+          Version number in schema attributes
+          All restricted lists (e.g. language) have enumeration in this schema
+          Be more explicit by specifying required, minOccurs, maxOccurs rather than relying on defaults
+          Be more consistent with the order of type, name, minOccurs, maxOccurs
+    0.3   Relation as an element with a uri and a type, as opposed to multiple uris and a single type in a dataset
+          Amend Context enumeration values as the correct values have now been confirmed
+  -->
+  <xs:element name="Inventory">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="Identifier" minOccurs="1" maxOccurs="1"/>
+				<xs:element type="xs:anyURI" name="Creator" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="Metadata" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element type="xs:anyURI" name="Publisher" minOccurs="1" maxOccurs="1"/>
+							<xs:element type="xs:string" name="Title" minOccurs="0" maxOccurs="1"/>
+							<xs:element type="xs:string" name="Description" minOccurs="0" maxOccurs="1"/>
+							<xs:element name="Coverage" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element type="xs:anyURI" name="Spatial" minOccurs="0" maxOccurs="1"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Datasets" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Dataset" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element type="xs:string" name="Identifier" minOccurs="1" maxOccurs="1"/>
+										<xs:element type="xs:string" name="Title" minOccurs="1" maxOccurs="1"/>
+										<xs:element type="xs:string" name="Description" minOccurs="0" maxOccurs="1"/>
+										<xs:element type="xs:anyURI" name="Rights" minOccurs="0" maxOccurs="1"/>
+										<xs:element type="enum:Protected" name="Protected" minOccurs="0" maxOccurs="1"/>
+										<xs:element type="xs:string" name="ProtectedText" minOccurs="0" maxOccurs="1"/>
+										<xs:element type="enum:Context" name="Context" minOccurs="0" maxOccurs="1"/>
+										<xs:element type="xs:string" name="RightsHolder" minOccurs="0" maxOccurs="1"/>
+										<xs:element type="xs:string" name="ChargeURL" minOccurs="0" maxOccurs="1"/>
+										<xs:element type="xs:date" name="CommittmentDate" minOccurs="0" maxOccurs="1"/>
+										<xs:element name="Relations" minOccurs="0" maxOccurs="1">
+											<xs:complexType>
+												<xs:sequence>
+                          <xs:element name="Relation" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:anyURI" name="DatasetIdentifier" minOccurs="1" maxOccurs="1"/>
+                                <xs:element type="enum:RelationType" name="RelationType" minOccurs="1" maxOccurs="1"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Subjects" minOccurs="0" maxOccurs="1">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Subject" minOccurs="0" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="Service" minOccurs="0" maxOccurs="1"/>
+																<xs:element type="xs:string" name="Function" minOccurs="0" maxOccurs="1"/>
+															</xs:sequence>
+															<xs:attribute type="xs:string" name="Scheme" use="optional"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Resources" minOccurs="0" maxOccurs="1">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Resource" minOccurs="0" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="Identifier" minOccurs="1" maxOccurs="1"/>
+																<xs:element type="xs:string" name="Title" minOccurs="1" maxOccurs="1"/>
+																<xs:element type="xs:string" name="Description" minOccurs="0" maxOccurs="1"/>
+																<xs:element name="Coverage" minOccurs="0" maxOccurs="1">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:anyURI" name="Spatial" minOccurs="0" maxOccurs="unbounded"/>
+																		</xs:sequence>
+																		<xs:attribute type="xs:date" name="TemporalFrom" use="optional"/>
+																		<xs:attribute type="xs:date" name="TemporalTo" use="optional"/>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="Renditions" minOccurs="0" maxOccurs="1">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="Rendition" minOccurs="0" maxOccurs="unbounded">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:anyURI" name="Identifier" minOccurs="1" maxOccurs="1"/>
+																						<xs:element type="xs:string" name="MimeType" minOccurs="0" maxOccurs="1"/>
+																						<xs:element type="xs:string" name="Title" minOccurs="0" maxOccurs="1"/>
+																						<xs:element type="xs:string" name="Description" minOccurs="0" maxOccurs="1"/>
+																						<xs:element type="enum:Availability" name="Availability" minOccurs="0" maxOccurs="1"/>
+																						<xs:element type="xs:string" name="ConformsTo" minOccurs="0" maxOccurs="unbounded"/>
+																					</xs:sequence>
+																					<xs:attribute type="xs:string" name="Active" use="optional"/>
+																					<xs:attribute type="xs:date" name="Modified" use="optional"/>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute type="enum:ResourceType" name="Type" use="required"/>
+															<xs:attribute type="xs:date" name="Modified" use="optional"/>
+															<xs:attribute type="xs:string" name="Active" use="optional"/>
+															<xs:attribute type="enum:Language" name="Language" use="optional"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute type="xs:date" name="Modified" use="optional"/>
+									<xs:attribute type="xs:string" name="Active" use="optional"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute type="xs:date" name="Modified" use="required"/>
+			<xs:attribute type="enum:Language" name="Language" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="Language">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value=""/>		<!--Unknown - will be saved as empty but will be assumed to be English-->
+			<xs:enumeration value="en"/>	<!--English-->
+			<xs:enumeration value="cy"/>	<!--Welsh-->
+		</xs:restriction>
+	</xs:simpleType>
+  <xs:simpleType name="Protected">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value=""/>
+      <xs:enumeration value="protected personal"/>
+      <xs:enumeration value="protected FoI exempt"/>
+      <xs:enumeration value="protected intellectual property"/>
+      <xs:enumeration value="charge applies"/>
+      <xs:enumeration value="other"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Context">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value=""/>
+      <xs:enumeration value="Reference"/>
+      <xs:enumeration value="Operational"/>
+      <xs:enumeration value="Aggregated"/>
+      <xs:enumeration value="Strategic"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="RelationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value=""/>
+      <xs:enumeration value="depends on"/>
+      <xs:enumeration value="derived from"/>
+      <xs:enumeration value="links to"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ResourceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Data"/>      <!--data for the dataset-->
+      <xs:enumeration value="Document"/>  <!--documentation describing the dataset-->
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Availability">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value=""/>
+      <xs:enumeration value="Download"/>
+      <xs:enumeration value="Service"/>
+      <xs:enumeration value="On application"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
