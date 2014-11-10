@@ -465,7 +465,7 @@
 				<Name>Decision</Name>
 				<Description>Decision</Description>
 				<Type>Text</Type>
-				<MaxSize>7</MaxSize>
+				<MaxSize>20</MaxSize>
 				<MinDate>N/A</MinDate>
 				<MaxDate>N/A</MaxDate>
 				<MinCurrency>N/A</MinCurrency>

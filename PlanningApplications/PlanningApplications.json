@@ -199,7 +199,7 @@
 			"description": "The decision of the planning authority on the application",
 			"constraints": {
 				"required": "false",
-				"pattern": "(Granted|Refused|)"
+				"pattern": "(Approve|Refuse|Split|Withdrawn|Prior not required|Prior granted|Prior refused|Prior refused permission required|)"
 			}
 		},
         {
