@@ -122,40 +122,6 @@
 				<IsTotalled>false</IsTotalled>
 			</RestColumnDefinition>
 			<RestColumnDefinition>
-				<Name>PublisherURI</Name>
-				<Description>PublisherURI</Description>
-				<Type>URL</Type>
-				<MaxSize>200</MaxSize>
-				<MinDate>N/A</MinDate>
-				<MaxDate>N/A</MaxDate>
-				<MinCurrency>N/A</MinCurrency>
-				<MaxCurrency>N/A</MaxCurrency>
-				<MinNumber>N/A</MinNumber>
-				<MaxNumber>N/A</MaxNumber>
-				<IsRequired>false</IsRequired>
-				<Uri/>
-				<DisplayInitial>true</DisplayInitial>
-				<Sorted>false</Sorted>
-				<IsTotalled>false</IsTotalled>
-			</RestColumnDefinition>
-			<RestColumnDefinition>
-				<Name>PublisherLabel</Name>
-				<Description>PublisherLabel</Description>
-				<Type>Text</Type>
-				<MaxSize>200</MaxSize>
-				<MinDate>N/A</MinDate>
-				<MaxDate>N/A</MaxDate>
-				<MinCurrency>N/A</MinCurrency>
-				<MaxCurrency>N/A</MaxCurrency>
-				<MinNumber>N/A</MinNumber>
-				<MaxNumber>N/A</MaxNumber>
-				<IsRequired>true</IsRequired>
-				<Uri/>
-				<DisplayInitial>true</DisplayInitial>
-				<Sorted>false</Sorted>
-				<IsTotalled>false</IsTotalled>
-			</RestColumnDefinition>
-			<RestColumnDefinition>
 				<Name>OrganisationURI</Name>
 				<Description>OrganisationURI</Description>
 				<Type>URL</Type>
