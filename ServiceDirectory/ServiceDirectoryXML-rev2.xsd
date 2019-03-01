@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns="http://data.istanduk.org/models/ServiceDirectory#" targetNamespace="http://data.istanduk.org/models/ServiceDirectory#" attributeFormDefault="unqualified" version="0.2" xmlns:ns1="http://data.istanduk.org/models/ServiceDirectory#" xmlns:dct="http://purl.org/dc/terms/" >
+<xsd:import namespace="http://purl.org/dc/terms/" schemaLocation="http://dublincore.org/schemas/xmls/qdc/dcterms.xsd"/>
+
+<xsd:element name="ServiceDirectory">
+
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="Directory" type="typeDirectory" minOccurs = "0"/>
+			<xsd:element name="Services" type="typeServices" minOccurs = "0" maxOccurs="unbounded"/>
+			<xsd:element name="Providers" type="typeProviders" minOccurs = "0" maxOccurs="unbounded"/>
+			<xsd:element name="Publishers" type="typePublishers"  minOccurs = "0" maxOccurs="unbounded"/>
+			<xsd:element name="Coverages" type="typeCoverages"  minOccurs = "0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+</xsd:element>
+
+<xsd:complexType name="typeDirectory">
+	<xsd:sequence>
+		<xsd:element ref="dct:issued" minOccurs = "0"/>
+		<xsd:element ref="dct:publisher" minOccurs = "0"/>
+		<xsd:element name="baseURI" type="xsd:anyURI" minOccurs = "0"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+
+
+<xsd:complexType name="typeServices">
+	<xsd:sequence>
+		<xsd:element name="Service" type="typeService" minOccurs = "0" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="typeProviders">
+	<xsd:sequence>
+		<xsd:element name="Provider" type="typeProvider" minOccurs = "0" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="typePublishers">
+	<xsd:sequence>
+		<xsd:element name="Publisher" type="typePublisher" minOccurs = "0" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+
+<xsd:complexType name="typeCoverages">
+	<xsd:sequence>
+		<xsd:element name="Coverage" type="typeCoverage" minOccurs = "0" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+
+<xsd:complexType name="typeService">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string"/>
+		<xsd:element name="Description" minOccurs="0" type="xsd:string"/>
+		<xsd:element name="Type" minOccurs="0" maxOccurs="unbounded">
+			<xsd:complexType>
+				<xsd:simpleContent>
+					<xsd:extension base="xsd:string">
+						<xsd:attribute name="scheme" type="xsd:string"/>
+						<xsd:attribute name="schemeBaseURI" type="xsd:anyURI"/>
+						<xsd:attribute name="code" type="xsd:string"/>
+						<xsd:attribute name="uri" type="xsd:anyURI"/>
+					</xsd:extension>
+				</xsd:simpleContent>
+			</xsd:complexType>
+		</xsd:element><xsd:element name="DeliverableType" minOccurs="0"><xsd:simpleType><xsd:restriction base="xsd:string"><xsd:enumeration value="Financial Support"/><xsd:enumeration value="Permission"/><xsd:enumeration value="Equipment"/><xsd:enumeration value="Assessment"/><xsd:enumeration value="Advice"/><xsd:enumeration value="Counselling"/><xsd:enumeration value="Information"/><xsd:enumeration value="Training"/></xsd:restriction></xsd:simpleType></xsd:element>
+		
+		
+		<xsd:element name="Provider">
+			<xsd:complexType>		
+				<xsd:attribute name="id" type="xsd:string"/>
+			</xsd:complexType>
+		</xsd:element>
+
+
+		<xsd:element name="Metadata" type="typeMetadata"/>
+		<xsd:element name="Commissioner" type="typeCommissioner" minOccurs="0"/>
+		
+		<xsd:element name="Audiences" minOccurs="0">
+			<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element name="Audience" type="typeAudience" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+		
+		<xsd:element name="Functions" minOccurs="0">
+			<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element name="Function" type="typeFunction" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+		
+		<xsd:element name="Reviews" minOccurs="0"><xsd:complexType><xsd:sequence><xsd:element name="Review" type="typeReview" minOccurs="0" maxOccurs="unbounded"/></xsd:sequence></xsd:complexType></xsd:element>
+		
+		<xsd:element name="EligibilityCriteria" minOccurs="0"><xsd:complexType><xsd:sequence><xsd:element name="Eligibility" type="typeEligibility" minOccurs="0" maxOccurs="unbounded"/></xsd:sequence></xsd:complexType></xsd:element>
+		
+		<xsd:element name="AreasCovered" minOccurs="0">
+			<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element name="Coverage" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>		
+							<xsd:attribute name="id" type="xsd:string"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+					
+	<xsd:element name="CostOptions" minOccurs="0">	
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="CostOption" type="typeCostOption" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Contacting" type="typeContacting" minOccurs="0"/>
+	<xsd:element name="Attending" type="typeAttending" minOccurs="0"/>
+</xsd:sequence>
+<xsd:attribute name="id" type="xsd:string"/>
+<xsd:attribute name="uri" type="xsd:anyURI"/>
+
+</xsd:complexType>
+
+
+
+<xsd:complexType name="typeProvider"><xsd:sequence><xsd:element name="Name" type="xsd:string"/><xsd:element name="Description" minOccurs="0" type="xsd:string"/><xsd:element name="Type" minOccurs="0" maxOccurs="unbounded"><xsd:complexType><xsd:simpleContent><xsd:extension base="xsd:string"><xsd:attribute name="scheme" type="xsd:string"/><xsd:attribute name="baseURI" type="xsd:anyURI"/><xsd:attribute name="code" type="xsd:string"/><xsd:attribute name="uri" type="xsd:anyURI"/></xsd:extension></xsd:simpleContent></xsd:complexType></xsd:element><xsd:element name="Logo" minOccurs="0" type="xsd:anyURI"/><xsd:element name="HomePage" minOccurs="0" type="xsd:anyURI"/></xsd:sequence><xsd:attribute name="id" type="xsd:string"/><xsd:attribute name="uri" type="xsd:anyURI"/></xsd:complexType>
+	
+	
+	<xsd:complexType name="typeMetadata">
+		<xsd:sequence>
+			<xsd:element name="LastUpdated" type="xsd:date"/>
+			<xsd:element name="PublisherServiceId" minOccurs="0" type="xsd:string"/>
+			
+			<xsd:element name="Publisher">
+				<xsd:complexType>
+					<xsd:attribute name="id" type="xsd:string"/>
+				</xsd:complexType>
+			
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	
+	
+	
+	<xsd:complexType name="typePublisher"><xsd:sequence><xsd:element name="Name" type="xsd:string"/><xsd:element name="HomePage" minOccurs="0" type="xsd:anyURI"/><xsd:element name="Logo" minOccurs="0" type="xsd:anyURI"/><xsd:element name="eMail" type="typeeMail" minOccurs="0"/></xsd:sequence><xsd:attribute name="id" type="xsd:string"/><xsd:attribute name="uri" type="xsd:anyURI"/></xsd:complexType><xsd:complexType name="typeCommissioner"><xsd:sequence><xsd:element name="Name" type="xsd:string"/><xsd:element name="HomePage" minOccurs="0" type="xsd:anyURI"/><xsd:element name="Logo" minOccurs="0" type="xsd:anyURI"/></xsd:sequence><xsd:attribute name="uri" type="xsd:anyURI"/></xsd:complexType><xsd:complexType name="typeAudience"><xsd:sequence><xsd:element name="Type"><xsd:complexType><xsd:simpleContent><xsd:extension base="xsd:string"><xsd:attribute name="scheme" type="xsd:string"/><xsd:attribute name="baseURI" type="xsd:anyURI"/><xsd:attribute name="code" type="xsd:string"/><xsd:attribute name="uri" type="xsd:anyURI"/></xsd:extension></xsd:simpleContent></xsd:complexType></xsd:element></xsd:sequence></xsd:complexType><xsd:complexType name="typeFunction"><xsd:sequence><xsd:element name="Type"><xsd:complexType><xsd:simpleContent><xsd:extension base="xsd:string"><xsd:attribute name="Label" type="xsd:string"/><xsd:attribute name="baseURI" type="xsd:anyURI"/><xsd:attribute name="code" type="xsd:string"/><xsd:attribute name="uri" type="xsd:anyURI"/></xsd:extension></xsd:simpleContent></xsd:complexType></xsd:element></xsd:sequence></xsd:complexType><xsd:complexType name="typeReview"><xsd:sequence><xsd:element name="Title" type="xsd:string"/><xsd:element name="Date" minOccurs="0" type="xsd:date"/><xsd:element name="Description" minOccurs="0" type="xsd:string"/><xsd:element name="Score" minOccurs="0" type="xsd:string"/><xsd:element name="Widget" minOccurs="0" type="xsd:anyURI"/><xsd:element name="URL" minOccurs="0" type="xsd:anyURI"/><xsd:element name="Reviewer" type="typeReviewer"/></xsd:sequence></xsd:complexType><xsd:complexType name="typeReviewer"><xsd:sequence><xsd:element name="Name" type="xsd:string"/><xsd:element name="Logo" minOccurs="0" type="xsd:anyURI"/></xsd:sequence><xsd:attribute name="uri" type="xsd:anyURI"/></xsd:complexType><xsd:complexType name="typeEligibility"><xsd:sequence><xsd:element name="Rule" type="xsd:string"/><xsd:element name="Type" minOccurs="0"><xsd:simpleType><xsd:restriction base="xsd:string"><xsd:enumeration value="Referral"/><xsd:enumeration value="Age"/><xsd:enumeration value="Residency"/><xsd:enumeration value="Other"/></xsd:restriction></xsd:simpleType></xsd:element><xsd:element name="Filter" minOccurs="0" maxOccurs="unbounded"><xsd:complexType><xsd:simpleContent><xsd:extension base="xsd:string"><xsd:attribute name="scheme" type="xsd:string"/><xsd:attribute name="baseURI" type="xsd:anyURI"/><xsd:attribute name="code" type="xsd:string"/><xsd:attribute name="uri" type="xsd:anyURI"/></xsd:extension></xsd:simpleContent></xsd:complexType></xsd:element></xsd:sequence></xsd:complexType>
+	
+	<xsd:complexType name="typeCoverage"><xsd:sequence><xsd:element name="Name" type="xsd:string"/><xsd:element name="Type" minOccurs="0"><xsd:complexType><xsd:simpleContent><xsd:extension base="xsd:string"><xsd:attribute name="scheme" type="xsd:string"/><xsd:attribute name="baseURI" type="xsd:anyURI"/><xsd:attribute name="code" type="xsd:string"/><xsd:attribute name="uri" type="xsd:anyURI"/></xsd:extension></xsd:simpleContent></xsd:complexType></xsd:element><xsd:element name="Extent" minOccurs="0" type="xsd:string"/></xsd:sequence><xsd:attribute name="uri" type="xsd:anyURI"/></xsd:complexType><xsd:complexType name="typeCostOption"><xsd:sequence><xsd:element name="Option" type="xsd:string"/><xsd:element name="Amount" minOccurs="0" type="xsd:decimal"/></xsd:sequence><xsd:attribute name="validFrom" type="xsd:date"/><xsd:attribute name="validTo" type="xsd:date"/></xsd:complexType><xsd:complexType name="typeContacting"><xsd:sequence><xsd:element name="Webpage" type="typeWebpage" minOccurs="0"/><xsd:element name="eMail" type="typeeMail" minOccurs="0"/><xsd:element name="Phone" type="typePhone" minOccurs="0"/></xsd:sequence></xsd:complexType><xsd:complexType name="typeWebpage"><xsd:sequence><xsd:element name="URL" type="xsd:string"/></xsd:sequence></xsd:complexType><xsd:complexType name="typeeMail"><xsd:sequence><xsd:element name="eMailAddress" type="xsd:string"/></xsd:sequence></xsd:complexType><xsd:complexType name="typePhone"><xsd:sequence><xsd:element name="Number" type="xsd:string"/><xsd:element name="Person" minOccurs="0" type="xsd:string"/><xsd:element name="Position" minOccurs="0" type="xsd:string"/></xsd:sequence></xsd:complexType><xsd:complexType name="typeAttending"><xsd:sequence><xsd:element name="Session" type="typeSession"/></xsd:sequence></xsd:complexType><xsd:complexType name="typeSession"><xsd:sequence><xsd:element name="Availability" type="typeAvailability" minOccurs="0"/><xsd:element name="Venue" type="typeVenue" minOccurs="0"/></xsd:sequence></xsd:complexType><xsd:complexType name="typeAvailability"><xsd:sequence><xsd:element name="Days" minOccurs="0" type="xsd:string"/><xsd:element name="TimeOpens" minOccurs="0" type="xsd:time"/><xsd:element name="TimeCloses" minOccurs="0" type="xsd:time"/><xsd:element name="Description" minOccurs="0" type="xsd:string"/></xsd:sequence><xsd:attribute name="validFrom" type="xsd:date"/><xsd:attribute name="validTo" type="xsd:date"/></xsd:complexType><xsd:complexType name="typeVenue"><xsd:sequence><xsd:element name="Name" minOccurs="0" type="xsd:string"/><xsd:element name="Accessibility" minOccurs="0" type="xsd:string"/><xsd:element name="Location" type="typeLocation" minOccurs="0"/></xsd:sequence></xsd:complexType><xsd:complexType name="typeLocation"><xsd:sequence><xsd:element name="Address" minOccurs="0"><xsd:complexType><xsd:sequence><xsd:element name="Line" maxOccurs="unbounded" type="xsd:string"/><xsd:element name="Postcode" minOccurs="0" type="xsd:string"/></xsd:sequence></xsd:complexType></xsd:element><xsd:element name="MapReference" minOccurs="0"><xsd:complexType><xsd:sequence><xsd:element name="GeoX" type="xsd:double"/><xsd:element name="GeoY" type="xsd:double"/></xsd:sequence><xsd:attribute name="coordinateReferenceSystem"><xsd:simpleType><xsd:restriction base="xsd:string"><xsd:enumeration value="OSGB36"/><xsd:enumeration value="WGS84"/><xsd:enumeration value="ETRS89"/></xsd:restriction></xsd:simpleType></xsd:attribute></xsd:complexType></xsd:element></xsd:sequence></xsd:complexType></xsd:schema>
